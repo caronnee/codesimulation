@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>codeVisualClass</class>
+ <widget class="QMainWindow" name="codeVisualClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>544</width>
+    <height>389</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>codeVisual</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" rowspan="4">
+     <widget class="VisualWindow" name="showWindow"/>
+    </item>
+    <item row="0" column="3">
+     <widget class="QPushButton" name="nextStep">
+      <property name="text">
+       <string>Next Step</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QComboBox" name="comboBox"/>
+    </item>
+    <item row="3" column="3">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="3">
+     <widget class="QLabel" name="posLabel">
+      <property name="frameShape">
+       <enum>QFrame::Panel</enum>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>544</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>VisualWindow</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">visualwindow.h</header>
+   <slots>
+    <signal>PositionChanged(QPointF)</signal>
+    <slot>NextStep()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="codevisual.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>nextStep</sender>
+   <signal>clicked()</signal>
+   <receiver>showWindow</receiver>
+   <slot>NextStep()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>553</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>259</x>
+     <y>206</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>showWindow</sender>
+   <signal>PositionChanged(QPointF)</signal>
+   <receiver>codeVisualClass</receiver>
+   <slot>SetText(QPointF)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>233</x>
+     <y>206</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>SetText(QPointF)</slot>
+ </slots>
+</ui>
