@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>544</width>
-    <height>389</height>
+    <width>596</width>
+    <height>569</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,20 +15,20 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0" rowspan="4">
+    <item row="1" column="0" rowspan="4" colspan="2">
      <widget class="VisualWindow" name="showWindow"/>
     </item>
-    <item row="0" column="3">
+    <item row="1" column="4">
      <widget class="QPushButton" name="nextStep">
       <property name="text">
        <string>Next Step</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="3">
+    <item row="2" column="4">
      <widget class="QComboBox" name="comboBox"/>
     </item>
-    <item row="3" column="3">
+    <item row="4" column="4">
      <spacer name="verticalSpacer">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -41,13 +41,48 @@
       </property>
      </spacer>
     </item>
-    <item row="2" column="3">
+    <item row="3" column="4">
      <widget class="QLabel" name="posLabel">
       <property name="frameShape">
        <enum>QFrame::Panel</enum>
       </property>
       <property name="text">
        <string>TextLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QGraphicsView" name="inputView">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="foregroundBrush">
+       <brush brushstyle="Dense4Pattern">
+        <color alpha="255">
+         <red>244</red>
+         <green>243</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </property>
+      <property name="interactive">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
       </property>
      </widget>
     </item>
@@ -58,10 +93,17 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>544</width>
+     <width>596</width>
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuMain">
+    <property name="title">
+     <string>Main</string>
+    </property>
+    <addaction name="action_Input"/>
+   </widget>
+   <addaction name="menuMain"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -72,6 +114,11 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_Input">
+   <property name="text">
+    <string>&amp;Input</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
