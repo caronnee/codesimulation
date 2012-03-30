@@ -15,9 +15,11 @@ public:
 	~codeVisual();
 	void onPaintEvent(QPaintEvent event);
 public slots:
+	void CreateInput();
 	void SetText(QPointF variant);
 private:
 	Ui::codeVisualClass ui;
+	QGraphicsItem * _arrow;
 };
 
 #endif // CODEVISUAL_H
