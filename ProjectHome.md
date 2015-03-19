@@ -1,0 +1,1 @@
+when applying some crypt function, it should show the structure and the way how the crypt function ( for example huffman, caesar ) is applied
